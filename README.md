@@ -10,9 +10,5 @@ Installation via npm:
  
  ### Usage:
  
- ` http-server [path] [options]`
- 
-[path] defaults to ./public if the folder exists, and ./ otherwise.
-
-Now you can open de browser and visit http://localhost:8080 to view the server.
+Type `http-server` on terminal (on project's path) and now you can open de browser and visit http://localhost:8080 to view the application on server.
  
