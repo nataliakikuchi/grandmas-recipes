@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grandama's Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Grandma's Yummy Recipes!</h1>
+                <p class="lead">This is a simple and interactive list where you can save the yummy recipes of your grandma!!!</p>
+            </div>
+           
+         <div class="main-list table-responsive">            
+            <table class="table bordered">
+                <thead>
+                    <tr>
+                        <th>Recipe</th>
+                        <th>Time to prepare</th>
+                        <th>What you want to do</th>
+                    </tr>
+                </thead>
+                <tbody class="list">
+                    <tr v-for="recipe in recipes">
+                        <td>
+                            <div class="input-group mb-3">
+                                <input v-model="recipe.name" :disabled="recipe.statusName" type="text" class="form-control" aria-label="Name of the recipe" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Time</span>
+                                </div>
+                                    <input v-model="recipe.time" :disabled="recipe.statusTime" type="text" class="form-control" aria-label="Time of preparation in hours and minutes">
+                            </div>
+                        </td>
+                        <td><div class="btn-group" role="group" aria-label="Basic example">
+                            <button v-on:click="recipe.statusName=true; recipe.statusTime=true" type="button" class="btn btn-secondary">Save</button>
+                            <button v-on:click="recipe.statusName=false; recipe.statusTime=false" type="button" class="btn btn-secondary">Edit</button>
+                            <button v-on:click='recipe.name=" " ; recipe.time= " "' type="button" class="btn btn-secondary">Delete</button>
+                        </div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+            <div class="add-new">
+                <button v-on:click="addRecipe" type="button" class="btn btn-outline-secondary">Add new recipe</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <script src="index.js"></script>
+</body>
+</html>
