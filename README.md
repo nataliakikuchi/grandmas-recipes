@@ -2,7 +2,7 @@
 
 ### Installing a zero-configuration command-line http server globally:
 
-To run de apllication it is necessary to clone its repository on your computer and access de local server.
+To run the apllication it is necessary to clone its repository on your computer and access de local server.
 
 Installation via npm:
 
